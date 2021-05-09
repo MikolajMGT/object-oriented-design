@@ -1,4 +1,4 @@
-import {AppBar, Button, IconButton, Toolbar, Typography} from '@material-ui/core';
+import {AppBar, IconButton, Toolbar, Typography} from '@material-ui/core';
 import React, {FC} from 'react';
 import {useHistory} from 'react-router';
 

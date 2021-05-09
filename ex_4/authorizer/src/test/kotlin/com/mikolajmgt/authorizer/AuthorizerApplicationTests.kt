@@ -8,5 +8,6 @@ class AuthorizerApplicationTests {
 
     @Test
     fun contextLoads() {
+        // this is example of test function
     }
 }

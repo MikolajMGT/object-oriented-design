@@ -18,6 +18,7 @@ const config = {
  */
 
 const app = express()
+app.disable("x-powered-by");
 
 const {prepareRouter} = require('../router/paths');
 const cors = require('cors')
