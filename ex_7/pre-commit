@@ -1,0 +1,10 @@
+#!/bin/sh
+
+git diff --name-only --cached --relative | grep '\.kt[s"]\?$' | xargs ktlint --relative .
+if [ $? -eq 0 ]; then
+  echo "Good job, KTLint is happy!";
+else
+  echo "Your code does not meet KTLint standards, please get rid of all warnings";
+  exit 1;
+fi
+
