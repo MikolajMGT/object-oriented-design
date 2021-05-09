@@ -20,4 +20,4 @@ Issues:
 
 After fix:
 
-![alt text](images/3.png "Second Scan")
+![alt text](images/3.png "After Fix")
