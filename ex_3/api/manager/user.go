@@ -65,11 +65,11 @@ func (m *Manager) UpdateUser(user *model.User) (*model.User, error) {
 		user.Password = prevUser.Password
 	}
 
-	emailParam := "email=" + user.Email
-	usernameParam := "username=" + user.Username
-	passwordParam := "password=" + user.Password
+	emailParam := fmt.Sprintf("email='" + user.Email + "'")
+	usernameParam := fmt.Sprintf("username='" + user.Username + "'")
+	passwordParam := fmt.Sprintf("password='" + user.Password + "'")
 
-	_, err = m.Query(fmt.Sprintf("UPDATE users SET '%v', '%v', '%v' WHERE id=%v", emailParam, usernameParam, passwordParam, user.Id))
+	_, err = m.Query(fmt.Sprintf("UPDATE users SET %v, %v, %v WHERE id=%v", emailParam, usernameParam, passwordParam, user.Id))
 	if err != nil {
 		return nil, err
 	}
