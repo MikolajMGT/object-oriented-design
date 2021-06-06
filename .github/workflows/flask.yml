@@ -2,7 +2,7 @@
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 # More info on Python, GitHub Actions, and Azure App Service: https://aka.ms/python-webapps-actions
 
-name: Build and deploy Python app to Azure Web App - amazing-app
+name: Flask Amazing App
 
 on:
   push:
@@ -13,6 +13,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      working-directory: ./ex_8
 
     steps:
     - uses: actions/checkout@v2
@@ -26,9 +28,11 @@ jobs:
       run: |
         python -m venv venv
         source venv/bin/activate
+      working-directory: ${{env.working-directory}}
 
     - name: Install dependencies
       run: pip install -r requirements.txt
+      working-directory: ${{env.working-directory}}
 
     # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
